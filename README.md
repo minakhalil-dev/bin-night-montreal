@@ -10,6 +10,17 @@ python bin_night.py tonight --sector plateau-sample
 
 No API key, no scraping, no account. Python standard library only.
 
+## Disclaimer
+
+This project is for information and learning only. It is not an
+official collection schedule and it is not affiliated with or
+endorsed by the City of Montreal, the City of Longueuil, or any
+collection service. The sample sectors are examples, not official
+schedules for any real address — verify your address on montreal.ca
+or longueuil.quebec / 311 before relying on it, and use the project
+at your own risk. The full text is in [DISCLAIMER.md](DISCLAIMER.md),
+and the software is provided "AS IS" under the MIT LICENSE.
+
 ## Quickstart (3 commands)
 
 ```bash
@@ -74,6 +85,7 @@ than February.
 ## Project structure
 
 ```
+DISCLAIMER.md         # full disclaimer — read before using
 bin_night.py          # date logic + CLI (stdlib only)
 data/sectors.json     # sample sectors — replace with your real sector
 test_bin_night.py     # 11 tests for the date logic
