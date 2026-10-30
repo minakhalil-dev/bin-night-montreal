@@ -10,6 +10,37 @@ python bin_night.py tonight --sector plateau-sample
 
 No API key, no scraping, no account. Python standard library only.
 
+## Why this project exists
+
+This is a **learning project, not a city service** — and it is
+small on purpose.
+
+The point is to show, in one readable file (`bin_night.py`), how
+date logic actually works on a real local problem: a pickup schedule
+is not just "every Thursday." That is why the repo keeps everything
+visible and testable, instead of hiding it behind a scraped calendar:
+
+- **Config-driven rules** — weekly, biweekly from an anchor date,
+  2nd/4th-weekday, seasonal, and January-only rules, all declared
+  in `data/sectors.json`, not hard-coded.
+- **Put-out windows that differ by city** — Montreal's 7 p.m. to
+  7 a.m. rule of thumb is not Longueuil's brown-bin rule, so each
+  sector carries its own window.
+- **Edge cases as tests** — biweekly on-weeks vs. off-weeks, green
+  waste returning "not in season" after December 2 instead of
+  inventing a date, Christmas trees jumping to next January rather
+  than February. The 11 tests exist to prove those cases, not just
+  the happy path.
+
+If you are learning from this, read it in this order:
+`data/sectors.json` (the rules), `bin_night.py` (the date logic),
+then `test_bin_night.py` (did the tricky dates actually work?).
+If you wanted to turn this into a real service, the next steps
+would be an official schedule source, an address lookup, and
+notifications — all listed as future work, not silently skipped.
+The value here is the logic and its tests, not a scraped official
+calendar, and the sample sectors are examples, not your schedule.
+
 ## Disclaimer
 
 This project is for information and learning only. It is not an
